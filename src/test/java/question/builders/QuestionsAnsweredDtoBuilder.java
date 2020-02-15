@@ -6,14 +6,14 @@ import dto.QuestionsAnsweredDto;
 import java.util.List;
 public class QuestionsAnsweredDtoBuilder {
 
-    private static List<QuestionAnsweredDto> questionAnswered;
+    private List<QuestionAnsweredDto> questionAnswered;
     private QuestionsAnsweredDto questionsAnsweredDto;
 
 //    private QuestionsAnsweredDtoBuilder(QuestionAnsweredDto... questionAnsweredDtos) {
 //        questionAnswered = Arrays.asList(questionAnsweredDtos);
 //    }
 
-    public QuestionsAnsweredDtoBuilder(List<QuestionAnsweredDto> questionAnswered) {
+    public QuestionsAnsweredDtoBuilder() {
         questionsAnsweredDto = new QuestionsAnsweredDto();
     }
 
