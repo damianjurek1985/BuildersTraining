@@ -1,7 +1,9 @@
 package question.builders;
 
+import com.github.javafaker.Faker;
 import dto.QuestionAnsweredDto;
 
+import java.util.Locale;
 import java.util.Optional;
 
 public class QuestionAnsweredDtoBuilder {
