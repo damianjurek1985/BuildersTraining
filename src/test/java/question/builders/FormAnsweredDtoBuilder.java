@@ -1,29 +1,24 @@
-package question.builders;
+package com.lumesse.soap.model.candidatewebservice;
+
 
 import dto.FormAnsweredDto;
 import dto.QuestionsAnsweredDto;
 
 public class FormAnsweredDtoBuilder {
-    //private List<QuestionAnsweredDto> questionAnswered = new ArrayList<>();
-    private FormAnsweredDto formAnsweredDto;
-    private QuestionsAnsweredDto questionsAnsweredDto;
+    private QuestionsAnsweredDto questionsAnswered = new QuestionsAnsweredDto();
 
     public static FormAnsweredDtoBuilder builder() {
         return new FormAnsweredDtoBuilder();
     }
 
     public FormAnsweredDtoBuilder withQuestionsAnswer(QuestionsAnsweredDto questionsAnsweredDto) {
-        formAnsweredDto.setQuestionsAnswered(questionsAnsweredDto);
+        questionsAnswered.getQuestionAnswered().addAll(questionsAnsweredDto);
         return this;
     }
 
     public FormAnsweredDto build() {
-//        QuestionsAnsweredDto questionsAnswered = new QuestionsAnsweredDto();
-//        questionsAnswered.getQuestionAnswered().addAll(this.questionAnswered);
-
         FormAnsweredDto newFormAnsweredDto = new FormAnsweredDto();
-//        formAnsweredDto.setQuestionsAnswered(questionsAnswered);
-        newFormAnsweredDto.setQuestionsAnswered(questionsAnsweredDto);
+        newFormAnsweredDto.setQuestionsAnswered(questionsAnswered);
         return newFormAnsweredDto;
     }
 }

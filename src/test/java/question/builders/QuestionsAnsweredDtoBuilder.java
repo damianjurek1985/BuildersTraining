@@ -1,34 +1,27 @@
-package question.builders;
+package com.lumesse.soap.model.candidatewebservice;
 
 import dto.QuestionAnsweredDto;
 import dto.QuestionsAnsweredDto;
 
+import java.util.ArrayList;
 import java.util.List;
+
 public class QuestionsAnsweredDtoBuilder {
 
-    private static List<QuestionAnsweredDto> questionAnswered;
-    private QuestionsAnsweredDto questionsAnsweredDto;
-
-//    private QuestionsAnsweredDtoBuilder(QuestionAnsweredDto... questionAnsweredDtos) {
-//        questionAnswered = Arrays.asList(questionAnsweredDtos);
-//    }
-
-    public QuestionsAnsweredDtoBuilder(List<QuestionAnsweredDto> questionAnswered) {
-        questionsAnsweredDto = new QuestionsAnsweredDto();
-    }
+    private List<QuestionAnsweredDto> questionAnswered = new ArrayList<>();
 
     public static QuestionsAnsweredDtoBuilder builder() {
-        return new QuestionsAnsweredDtoBuilder(questionAnswered);
+        return new QuestionsAnsweredDtoBuilder();
     }
 
     public QuestionsAnsweredDtoBuilder withQuestionAnsweredValue(QuestionAnsweredDto questionAnsweredValue) {
-        questionsAnsweredDto.getQuestionAnswered().add(questionAnsweredValue);
+        questionAnswered.add(questionAnsweredValue);
         return this;
     }
 
     public QuestionsAnsweredDto build() {
         QuestionsAnsweredDto newQuestionsAnsweredDto = new QuestionsAnsweredDto();
-        newQuestionsAnsweredDto.getQuestionAnswered().addAll(questionAnswered);  //<---null ?
+        newQuestionsAnsweredDto.getQuestionAnswered().addAll(questionAnswered);
 
         return newQuestionsAnsweredDto;
     }
